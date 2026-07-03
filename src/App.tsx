@@ -1,6 +1,7 @@
 import { lazy, Suspense, useEffect, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { ArrowUp } from 'lucide-react'
+import { SpeedInsights } from '@vercel/speed-insights/react'
 import { portfolio } from './data/portfolio'
 import Navbar from './components/Navbar'
 import ScrollProgress from './components/ScrollProgress'
@@ -87,6 +88,7 @@ function App() {
           </motion.button>
         ) : null}
       </AnimatePresence>
+      <SpeedInsights />
     </div>
   )
 }

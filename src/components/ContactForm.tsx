@@ -1,10 +1,6 @@
 import { useState, type FormEvent } from 'react'
 import { motion } from 'framer-motion'
-import { send } from 'emailjs-com'
-
-const serviceId = 'service_demo'
-const templateId = 'template_demo'
-const publicKey = 'demo_key'
+import { portfolio } from '../data/portfolio'
 
 export default function ContactForm() {
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
@@ -14,16 +10,26 @@ export default function ContactForm() {
     setStatus('loading')
 
     const form = event.currentTarget
-    const data = new FormData(form)
+    const formData = new FormData(form)
+    
+    // Add Web3Forms access key
+    const accessKey = portfolio.web3formsKey || 'YOUR_WEB3FORMS_ACCESS_KEY'
+    formData.append('access_key', accessKey)
+    formData.append('subject', `New Message from Portfolio - ${formData.get('name')}`)
 
     try {
-      await send(serviceId, templateId, {
-        from_name: data.get('name'),
-        reply_to: data.get('email'),
-        message: data.get('message'),
-      }, publicKey)
-      setStatus('success')
-      form.reset()
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: formData,
+      })
+
+      const data = await response.json()
+      if (data.success) {
+        setStatus('success')
+        form.reset()
+      } else {
+        setStatus('error')
+      }
     } catch {
       setStatus('error')
     }
@@ -50,7 +56,7 @@ export default function ContactForm() {
           <span className="relative">{status === 'loading' ? 'Sending...' : 'Send Message'}</span>
         </motion.button>
         {status === 'success' ? <span className="text-sm font-semibold text-emerald-500">✓ Message sent successfully.</span> : null}
-        {status === 'error' ? <span className="text-sm font-semibold text-rose-500">✗ Something went wrong. Please try again.</span> : null}
+        {status === 'error' ? <span className="text-sm font-semibold text-rose-500">✗ Something went wrong. Please check your access key.</span> : null}
       </div>
     </form>
   )

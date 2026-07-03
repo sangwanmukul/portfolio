@@ -11,6 +11,7 @@ const HeroSection = lazy(() => import('./components/HeroSection'))
 const AboutSection = lazy(() => import('./components/AboutSection'))
 const ExperienceSection = lazy(() => import('./components/ExperienceSection'))
 const ProjectsSection = lazy(() => import('./components/ProjectsSection'))
+const GithubSection = lazy(() => import('./components/GithubSection'))
 const ResearchSection = lazy(() => import('./components/ResearchSection'))
 const SkillsSection = lazy(() => import('./components/SkillsSection'))
 const AchievementsSection = lazy(() => import('./components/AchievementsSection'))
@@ -63,6 +64,7 @@ function App() {
           <AboutSection />
           <ExperienceSection />
           <ProjectsSection />
+          <GithubSection />
           <ResearchSection />
           <SkillsSection />
           <AchievementsSection />

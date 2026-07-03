@@ -68,6 +68,7 @@ export const portfolio = {
       featured: true,
       publication: false,
       accent: 'from-blue-600 via-indigo-600 to-cyan-500',
+      category: 'Backend',
     },
     {
       title: 'L-MACD',
@@ -79,6 +80,7 @@ export const portfolio = {
       featured: true,
       publication: true,
       accent: 'from-fuchsia-600 via-violet-600 to-indigo-500',
+      category: 'Research',
     },
     {
       title: 'Generative Data Augmentation with MARL',
@@ -90,6 +92,7 @@ export const portfolio = {
       featured: false,
       publication: false,
       accent: 'from-emerald-500 via-teal-500 to-cyan-500',
+      category: 'AI & ML',
     },
     {
       title: 'AI AudioBook Generator',
@@ -101,6 +104,7 @@ export const portfolio = {
       featured: false,
       publication: false,
       accent: 'from-amber-500 via-orange-500 to-rose-500',
+      category: 'AI & ML',
     },
     {
       title: 'Multimodal Ozone Layer Prediction',
@@ -112,6 +116,7 @@ export const portfolio = {
       featured: false,
       publication: false,
       accent: 'from-rose-500 via-pink-500 to-purple-500',
+      category: 'Research',
     },
   ],
   research: {
@@ -152,11 +157,32 @@ export const portfolio = {
     },
   ],
   achievements: [
-    'IEEE Access Publication',
-    'Sir C. V. Raman Award',
-    'Microsoft DP-900',
-    'Meta Android Development',
-    'SQL for Data Science',
+    {
+      title: 'IEEE Access Publication',
+      description: 'Published research on adaptive CAPTCHA defense in a high-impact journal.',
+      type: 'publication',
+    },
+    {
+      title: 'Sir C. V. Raman Award',
+      description: 'Recognized for academic excellence and impactful technical contributions.',
+      type: 'academic',
+    },
+    {
+      title: 'Microsoft DP-900',
+      description: 'Certified in Microsoft Azure data fundamentals and cloud data concepts.',
+      type: 'certification',
+    },
+    {
+      title: 'Meta Android Development',
+      description: 'Completed structured mobile development learning focused on Android fundamentals.',
+      type: 'certification',
+    },
+    {
+      title: 'SQL for Data Science',
+      description: 'Strengthened analytics and database fluency for modern data workflows.',
+      type: 'certification',
+    },
   ],
   navItems: ['Home', 'About', 'Experience', 'Projects', 'Research', 'Skills', 'Achievements', 'Contact'],
+  web3formsKey: '0c253df6-a77d-419b-9492-f1c00d1791a6',
 }

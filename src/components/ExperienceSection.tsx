@@ -44,7 +44,7 @@ export default function ExperienceSection() {
                   </div>
                   <div className="flex flex-wrap gap-2">
                     {item.technologies.map((tech) => (
-                      <span key={tech} className="rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-sm font-medium text-slate-700 dark:border-slate-700 dark:bg-slate-950/80 dark:text-slate-200">
+                      <span key={tech} className="rounded-full border border-gradient-to-r from-blue-200/50 to-violet-200/50 bg-gradient-to-r from-blue-100/60 to-violet-100/60 px-4 py-1.5 text-sm font-semibold text-blue-700 shadow-sm transition hover:shadow-md dark:border-blue-700/40 dark:from-blue-950/60 dark:to-violet-950/60 dark:text-blue-300">
                         {tech}
                       </span>
                     ))}

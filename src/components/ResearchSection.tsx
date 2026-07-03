@@ -38,10 +38,10 @@ export default function ResearchSection() {
                 <p className="text-sm font-semibold uppercase tracking-[0.3em] text-slate-500 dark:text-slate-400">Citation</p>
                 <p className="mt-3 text-lg font-medium text-slate-900 dark:text-white">M. Sangwan et al., {portfolio.research.year}</p>
                 <div className="mt-6 flex flex-wrap gap-3">
-                  <a href={portfolio.research.doi} className="inline-flex items-center gap-2 rounded-full bg-slate-900 px-4 py-2 text-sm font-semibold text-white dark:bg-white dark:text-slate-900">
+                  <a href={portfolio.research.doi} target="_blank" rel="noreferrer" className="group inline-flex items-center gap-2 overflow-hidden rounded-full bg-gradient-to-r from-blue-600 to-violet-600 px-5 py-2 text-sm font-bold text-white shadow-lg shadow-blue-500/30 transition hover:-translate-y-1 hover:shadow-xl">
                     <FaLink /> DOI
                   </a>
-                  <a href={portfolio.research.paper} className="inline-flex items-center gap-2 rounded-full border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-700 dark:border-slate-700 dark:text-slate-200">
+                  <a href={portfolio.research.paper} target="_blank" rel="noreferrer" className="group inline-flex items-center gap-2 rounded-full border-2 border-blue-600 px-5 py-2 text-sm font-bold text-blue-600 shadow-md transition hover:-translate-y-1 hover:shadow-lg dark:border-blue-400 dark:text-blue-300">
                     <FaFileAlt /> Paper
                   </a>
                 </div>

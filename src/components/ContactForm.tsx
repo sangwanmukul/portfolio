@@ -32,25 +32,25 @@ export default function ContactForm() {
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
       <div className="grid gap-6 md:grid-cols-2">
-        <label className="text-sm font-medium text-slate-700 dark:text-slate-300">
+        <label className="text-sm font-semibold text-slate-700 dark:text-slate-300">
           Name
-          <input name="name" required className="mt-2 w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 outline-none transition focus:border-cyan-500 dark:border-slate-700 dark:bg-slate-900" placeholder="Your name" />
+          <input name="name" required className="mt-2 w-full rounded-2xl border-2 border-blue-200/50 bg-blue-50/50 px-4 py-3 font-medium text-slate-900 outline-none transition focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 dark:border-blue-700/50 dark:bg-blue-950/30 dark:text-white dark:focus:ring-blue-400/20" placeholder="Your name" />
         </label>
-        <label className="text-sm font-medium text-slate-700 dark:text-slate-300">
+        <label className="text-sm font-semibold text-slate-700 dark:text-slate-300">
           Email
-          <input name="email" type="email" required className="mt-2 w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 outline-none transition focus:border-cyan-500 dark:border-slate-700 dark:bg-slate-900" placeholder="you@example.com" />
+          <input name="email" type="email" required className="mt-2 w-full rounded-2xl border-2 border-blue-200/50 bg-blue-50/50 px-4 py-3 font-medium text-slate-900 outline-none transition focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 dark:border-blue-700/50 dark:bg-blue-950/30 dark:text-white dark:focus:ring-blue-400/20" placeholder="you@example.com" />
         </label>
       </div>
-      <label className="block text-sm font-medium text-slate-700 dark:text-slate-300">
+      <label className="block text-sm font-semibold text-slate-700 dark:text-slate-300">
         Message
-        <textarea name="message" required rows={6} className="mt-2 min-h-36 w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 outline-none transition focus:border-cyan-500 dark:border-slate-700 dark:bg-slate-900" placeholder="Tell me about the role, product, or idea you have in mind." />
+        <textarea name="message" required rows={6} className="mt-2 min-h-36 w-full rounded-2xl border-2 border-blue-200/50 bg-blue-50/50 px-4 py-3 font-medium text-slate-900 outline-none transition focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 dark:border-blue-700/50 dark:bg-blue-950/30 dark:text-white dark:focus:ring-blue-400/20" placeholder="Tell me about the role, product, or idea you have in mind." />
       </label>
       <div className="flex flex-wrap items-center gap-4">
-        <motion.button whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.98 }} type="submit" disabled={status === 'loading'} className="rounded-full bg-gradient-to-r from-blue-600 to-violet-600 px-6 py-3 font-semibold text-white shadow-lg shadow-blue-500/20 transition disabled:opacity-70">
-          {status === 'loading' ? 'Sending...' : 'Send Message'}
+        <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} type="submit" disabled={status === 'loading'} className="group relative overflow-hidden rounded-full bg-gradient-to-r from-blue-600 via-violet-600 to-cyan-500 px-8 py-3 font-bold text-white shadow-lg shadow-blue-500/40 transition hover:-translate-y-1 hover:shadow-xl hover:shadow-blue-500/60 disabled:opacity-70">
+          <span className="relative">{status === 'loading' ? 'Sending...' : 'Send Message'}</span>
         </motion.button>
-        {status === 'success' ? <span className="text-sm font-medium text-emerald-500">Message sent successfully.</span> : null}
-        {status === 'error' ? <span className="text-sm font-medium text-rose-500">Something went wrong. Please try again.</span> : null}
+        {status === 'success' ? <span className="text-sm font-semibold text-emerald-500">✓ Message sent successfully.</span> : null}
+        {status === 'error' ? <span className="text-sm font-semibold text-rose-500">✗ Something went wrong. Please try again.</span> : null}
       </div>
     </form>
   )

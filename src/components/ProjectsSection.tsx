@@ -38,12 +38,12 @@ export default function ProjectsSection() {
                       ) : null}
                     </div>
                     <div className="flex gap-2">
-                      <a href={project.githubUrl} target="_blank" rel="noreferrer" className="rounded-full border border-slate-200 bg-slate-50 p-3 text-slate-700 transition hover:-translate-y-0.5 dark:border-slate-700 dark:bg-slate-950/80 dark:text-slate-100" aria-label={`View ${project.title} on GitHub`}>
-                        <FaGithub />
+                      <a href={project.githubUrl} target="_blank" rel="noreferrer" className="group rounded-full border-2 border-blue-500/50 bg-gradient-to-br from-blue-100 to-blue-50 p-3 text-blue-600 shadow-md transition hover:-translate-y-1 hover:border-blue-600 hover:shadow-lg dark:border-blue-600/50 dark:from-blue-950/50 dark:to-blue-900/50 dark:text-blue-300" aria-label={`View ${project.title} on GitHub`}>
+                        <FaGithub className="group-hover:scale-110 transition" />
                       </a>
                       {project.liveUrl ? (
-                        <a href={project.liveUrl} target="_blank" rel="noreferrer" className="rounded-full border border-slate-200 bg-slate-50 p-3 text-slate-700 transition hover:-translate-y-0.5 dark:border-slate-700 dark:bg-slate-950/80 dark:text-slate-100" aria-label={`View live demo for ${project.title}`}>
-                          <FaExternalLinkAlt />
+                        <a href={project.liveUrl} target="_blank" rel="noreferrer" className="group rounded-full border-2 border-violet-500/50 bg-gradient-to-br from-violet-100 to-violet-50 p-3 text-violet-600 shadow-md transition hover:-translate-y-1 hover:border-violet-600 hover:shadow-lg dark:border-violet-600/50 dark:from-violet-950/50 dark:to-violet-900/50 dark:text-violet-300" aria-label={`View live demo for ${project.title}`}>
+                          <FaExternalLinkAlt className="group-hover:scale-110 transition" />
                         </a>
                       ) : null}
                     </div>
@@ -51,7 +51,7 @@ export default function ProjectsSection() {
                   <p className="mt-6 text-lg leading-8 text-slate-600 dark:text-slate-300">{project.description}</p>
                   <div className="mt-6 flex flex-wrap gap-2">
                     {project.technologies.map((tech) => (
-                      <span key={tech} className="rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-sm font-medium text-slate-700 dark:border-slate-700 dark:bg-slate-950/80 dark:text-slate-200">
+                      <span key={tech} className="rounded-full border border-gradient-to-r from-blue-200/50 to-violet-200/50 bg-gradient-to-r from-blue-100/60 to-violet-100/60 px-4 py-1.5 text-sm font-semibold text-blue-700 shadow-sm transition hover:shadow-md dark:border-blue-700/40 dark:from-blue-950/60 dark:to-violet-950/60 dark:text-blue-300">
                         {tech}
                       </span>
                     ))}

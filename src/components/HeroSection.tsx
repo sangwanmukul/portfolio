@@ -46,22 +46,25 @@ export default function HeroSection() {
             {portfolio.heroDescription}
           </p>
           <div className="mt-8 flex flex-wrap gap-4">
-            <a href={portfolio.resumeUrl} className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-blue-600 via-violet-600 to-cyan-500 px-6 py-3 font-semibold text-white shadow-lg shadow-blue-500/20 transition hover:-translate-y-0.5 hover:shadow-cyan-500/20">
-              Download Resume <ArrowRight size={18} />
+            <a href={portfolio.resumeUrl} className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-gradient-to-r from-blue-600 via-violet-600 to-cyan-500 px-6 py-3 font-bold text-white shadow-lg shadow-blue-500/40 transition hover:-translate-y-1 hover:shadow-xl hover:shadow-blue-500/60">
+              <span className="absolute inset-0 bg-gradient-to-r from-cyan-400 via-blue-500 to-violet-600 opacity-0 transition-opacity group-hover:opacity-100" />
+              <span className="relative flex items-center gap-2">
+                Download Resume <ArrowRight size={18} className="transition group-hover:translate-x-1" />
+              </span>
             </a>
-            <a href="#projects" className="rounded-full border border-slate-300 bg-white/80 px-6 py-3 font-semibold text-slate-800 shadow-sm transition hover:-translate-y-0.5 hover:bg-white dark:border-slate-700 dark:bg-slate-900/70 dark:text-slate-100">
-              View Projects
+            <a href="#projects" className="group relative inline-flex items-center justify-center rounded-full border-2 border-blue-600 bg-white/90 px-6 py-3 font-bold text-blue-600 shadow-md transition hover:-translate-y-1 hover:bg-blue-50 hover:shadow-lg dark:border-blue-400 dark:bg-slate-900/90 dark:text-blue-300 dark:hover:bg-slate-800">
+              <span className="relative">View Projects</span>
             </a>
           </div>
           <div className="mt-8 flex flex-wrap items-center gap-3">
-            <a href={portfolio.github} target="_blank" rel="noreferrer" className="rounded-full border border-slate-300 bg-white/80 p-3 text-slate-700 shadow-sm transition hover:-translate-y-0.5 dark:border-slate-700 dark:bg-slate-900/70 dark:text-slate-100" aria-label="GitHub">
-              <FaGithub size={18} />
+            <a href={portfolio.github} target="_blank" rel="noreferrer" className="group relative rounded-full border-2 border-blue-500/50 bg-gradient-to-br from-blue-100 to-violet-100 p-3 text-blue-600 shadow-md transition hover:-translate-y-1 hover:shadow-lg hover:border-blue-600 dark:border-blue-600/50 dark:from-blue-950/50 dark:to-violet-950/50 dark:text-blue-300" aria-label="GitHub">
+              <FaGithub size={20} className="group-hover:scale-110 transition" />
             </a>
-            <a href={portfolio.linkedin} target="_blank" rel="noreferrer" className="rounded-full border border-slate-300 bg-white/80 p-3 text-slate-700 shadow-sm transition hover:-translate-y-0.5 dark:border-slate-700 dark:bg-slate-900/70 dark:text-slate-100" aria-label="LinkedIn">
-              <FaLinkedin size={18} />
+            <a href={portfolio.linkedin} target="_blank" rel="noreferrer" className="group relative rounded-full border-2 border-cyan-500/50 bg-gradient-to-br from-cyan-100 to-blue-100 p-3 text-cyan-600 shadow-md transition hover:-translate-y-1 hover:shadow-lg hover:border-cyan-600 dark:border-cyan-600/50 dark:from-cyan-950/50 dark:to-blue-950/50 dark:text-cyan-300" aria-label="LinkedIn">
+              <FaLinkedin size={20} className="group-hover:scale-110 transition" />
             </a>
-            <a href={`mailto:${portfolio.email}`} className="rounded-full border border-slate-300 bg-white/80 p-3 text-slate-700 shadow-sm transition hover:-translate-y-0.5 dark:border-slate-700 dark:bg-slate-900/70 dark:text-slate-100" aria-label="Email">
-              <Mail size={18} />
+            <a href={`mailto:${portfolio.email}`} className="group relative rounded-full border-2 border-violet-500/50 bg-gradient-to-br from-violet-100 to-pink-100 p-3 text-violet-600 shadow-md transition hover:-translate-y-1 hover:shadow-lg hover:border-violet-600 dark:border-violet-600/50 dark:from-violet-950/50 dark:to-pink-950/50 dark:text-violet-300" aria-label="Email">
+              <Mail size={20} className="group-hover:scale-110 transition" />
             </a>
           </div>
         </motion.div>
